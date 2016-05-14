@@ -26,6 +26,7 @@ public class IOUtils {
         }catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     public void testBuffer() {
@@ -142,6 +143,43 @@ public class IOUtils {
             dos.close();
             dis.close();
         }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void testIO() {
+        try {
+            File file = new File ("test.txt");
+            System.out.println(file.getAbsolutePath());
+            FileInputStream fis = new FileInputStream("input.txt");
+            FileOutputStream fos = new FileOutputStream("output.txt");
+            int b ;
+            while((b = fis.read()) != -1) {
+
+                fos.write(b);
+
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void testRandomAccess() {
+        byte[] b1 = {1,2,3};
+        byte[] b2 = {1,2,3,4,5,6};
+        RandomAccessFile raf = null;
+        try {
+            raf = new RandomAccessFile("input.txt", "rw");
+            raf.writeUTF("Hello random access file");
+            raf.seek(0);
+            System.out.println("" + raf.read(b1,0, 3));
+            raf.seek(0);
+            System.out.println("" + raf.read(b2,1,2));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

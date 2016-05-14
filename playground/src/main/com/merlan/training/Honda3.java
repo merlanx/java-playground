@@ -13,6 +13,6 @@ public class Honda3 extends Bike implements Painting {
 
     @Override
     public void paint() {
-
+        System.out.println("Painting Honda3");
     }
 }

@@ -1,11 +1,12 @@
 package main.com.merlan;
 
+import main.com.merlan.tools.CountFrequence;
 import main.com.merlan.training.*;
 
 public class Main {
 
-    public static void main(String[] args) {
-        {
+    public static void main(String[] args) throws InterruptedException {
+
             Utils utils = new Utils();
 
             // 1. reverse string
@@ -63,14 +64,14 @@ public class Main {
 
 
             // 12. Java Object
-            System.out.println("---------- 11.Sort Array ----------");
-            Person p = new Person();
-            System.out.println("The person's name is " + p.getName());
-            System.out.println("The person's age is " + p.getAge());
+            System.out.println("---------- 12.Sort Array ----------");
+            //Person p = new Person();
+            //System.out.println("The person's name is " + p.getName());
+            //System.out.println("The person's age is " + p.getAge());
 
             // 13. Use different language
-      /*  System.out.println("---------- 13.Use Different Language ----------");
-        System.out.println("    *****Displaying in Simply Chinese*****");
+        System.out.println("---------- 13.Use Different Language ----------");
+        /*System.out.println("    *****Displaying in Simply Chinese*****");
         utils.useDiffLang("CN");
         System.out.println("    *****Displaying in HK Traditional Chinese*****");
         utils.useDiffLang("ZH");
@@ -81,17 +82,50 @@ public class Main {
         System.out.println("    *****Displaying by system default*****");
         utils.useDiffLang("");*/
 
-            // 14. Test Inheritance
-            System.out.println("---------- 14.Test Inheritance ----------");
-            //Cat c = new Cat()
-            //Mammal mammalCat = new Cat("kitty");
-            Cat cat = new Cat("kitty");
-            cat.sing("miao");
-            Bike obj = new Honda3();
-            Honda3 honda = new Honda3();
-            obj.run();
-            System.out.println(obj.speedLimit);
-            System.out.println(honda.speedLimit);
-        }
+        // 14. Test Inheritance
+        System.out.println("---------- 14.Test Inheritance ----------");
+       /* Cat c = new Cat();
+        Mammal mammalCat = new Cat("kitty");
+        Cat cat = new Cat("kitty");
+        cat.sing("miao");
+        Bike obj = new Honda3();
+        Honda3 honda = new Honda3();
+        obj.run();
+        obj.paint();
+        honda.paint();
+        System.out.println(obj.speedLimit);
+        System.out.println(honda.speedLimit);*/
+
+        // 15. Test Call by value and reference
+        System.out.println("---------- 15.Test Call by value and reference ----------");
+        /*CallByValue callByValue = new CallByValue();
+        int a = 3;
+        callByValue.increment(3);
+        System.out.println("a is " + a);
+        CallByRef callByRef = new CallByRef();
+        Number n = new Number();
+        n.a = 0;
+        callByRef.increment(n);
+        System.out.println("number.a is " + n.a);*/
+        // 16. Test IO
+        System.out.println("---------- 16.Test IO ----------");
+        //IOUtils ioUtils = new IOUtils();
+        //ioUtils.testIO();
+        //ioUtils.testRandomAccess();
+
+        // 17. Test Collection and Map
+        System.out.println("---------- 17.Test Collection and Map ----------");
+       /* CountFrequence cf = new CountFrequence("F:\\dev\\git\\java-playground\\playground\\src\\main\\resource\\training\\ProfessionalEmail.doc");
+        cf.count();
+        cf.printResult();*/
+
+        // 18. Test Thread
+        System.out.println("---------- 18. Test Thread ----------");
+        /*for(int i = 0; i< 10; i++) {
+            Thread thread = new Thread(new TestThread(i));
+            //TestThread thread = new TestThread(i);
+            thread.start();
+            //thread.sleep(1);
+        }*/
     }
 }
